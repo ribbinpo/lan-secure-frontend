@@ -7,15 +7,10 @@ import { AiOutlineAppstoreAdd } from 'react-icons/ai';
 const node = () => {
   return (
     
-    <div className="px-16 space-y-3 pt-8">
-      <Title name="Node">
+    <div>
       
-        <button type="button" className=" px-3 py-1 rounded-sm text-sm"><AiOutlineAppstoreAdd size={25}/></button>
-      </Title>
-      <TableNode />
     </div>
   );
 };
 
 export default node;
-

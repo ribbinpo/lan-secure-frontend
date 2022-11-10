@@ -1,8 +1,10 @@
 import React ,{ useEffect, useState } from 'react';
+import { CiEdit } from 'react-icons/ci';
+import { CiEraser } from 'react-icons/ci';
 
 const example = [
-    { id: 1, name: 'PSU1', detail: 'information1', picture: 'pathImage1' },
-    { id: 2, name: 'PSU2', detail: 'information2', picture: 'pathImage2' }
+    { id: 1, name: 'PSU005', detail: '1/22 Vichit Mueang Phuket The Base condo', owner: 'Nattapong Bunchokying' },
+    { id: 2, name: 'PSU035', detail: '78/83 Vichit Mueang Phuket', owner: 'Teerawut Saesim' }
 ];
 
 const TableNode = () => {
@@ -14,8 +16,8 @@ const TableNode = () => {
   return (
     <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                <tr>
+            <thead className="text-xs text-gray-700 uppercase bg-blue-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr className=' text-sm text-gray-900 '>
                     <th scope="col" className="py-3 px-6">
                         Name
                     </th>
@@ -23,7 +25,7 @@ const TableNode = () => {
                         Detail
                     </th>
                     <th scope="col" className="py-3 px-6">
-                        Picture
+                        Owner
                     </th>
                     <th scope="col" className="py-3 px-6">
                         Action
@@ -41,10 +43,13 @@ const TableNode = () => {
                                 {value.detail}
                             </td>
                             <td className="py-4 px-6">
-                                {value.picture}
+                                {value.owner}
                             </td>
-                            <td className="py-4 px-6">
-                                <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            <td className="py-3 px-7">
+                                <div className="flex">
+                                    <a href="#" className=""><CiEdit size={20}/></a>
+                                    <a href="#" className="pl-2"><CiEraser size={20}/></a>
+                                </div>
                             </td>
                         </tr>
                     );

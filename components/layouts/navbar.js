@@ -1,18 +1,17 @@
 import { Navbar } from "flowbite-react";
-
+import { FcMindMap } from 'react-icons/fc';
 const navbar = () => {
+  
   return (
     <Navbar
     fluid={true}
     rounded={true}
     className="shadow-md"
     >
-      <Navbar.Brand href="https://flowbite.com/">
-        <img
-          src="https://flowbite.com/docs/images/logo.svg"
-          className="mr-3 h-6 sm:h-9"
-          alt="Flowbite Logo"
-        />
+      <Navbar.Brand href="/">
+        <div className="ml-2">
+          <div className="pr-2"><FcMindMap size="30"/></div>
+          </div>
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
           LAN-SECURE 
         </span>
