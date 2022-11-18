@@ -1,5 +1,6 @@
 import Title from "../components/title";
 import TableNode from "../components/tables/tableNode";
+import AddNode from "../components/addnode/addnode";
 import { AiOutlineAppstoreAdd } from 'react-icons/ai';
 
 
@@ -13,6 +14,7 @@ const node = () => {
         <button type="button" className=" px-3 py-1 rounded-sm text-sm"><AiOutlineAppstoreAdd size={25}/></button>
       </Title>
       <TableNode />
+      <AddNode />
     </div>
   );
 };
