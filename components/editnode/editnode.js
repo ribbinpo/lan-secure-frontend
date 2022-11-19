@@ -34,7 +34,7 @@ const EditNode = () => {
                 <div> 
                     <button className="rounded-xl bg-sky-700">
                     <div className="text-lg text-white px-4 ">
-                    Add
+                    Save
                     </div>
                  </button>
                 </div>

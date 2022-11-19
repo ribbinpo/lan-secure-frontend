@@ -25,14 +25,14 @@ const DelNode = () => {
                 <div> 
                     <button className="rounded-xl bg-sky-700">
                     <div className="text-lg text-white px-4 ">
-                    Add
+                    Yes
                     </div>
                  </button>
                 </div>
                 <div>
                     <button className="rounded-xl bg-sky-700 ">
                     <div className="text-lg text-white px-4 ">
-                    Edit
+                    No
                     </div>
                  </button>
                 </div>
