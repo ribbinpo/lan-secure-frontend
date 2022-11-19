@@ -3,7 +3,7 @@ import { FcMindMap } from 'react-icons/fc';
 
 
 
-const AddNode = () => {
+const EditNode = () => {
     return(
         <form>
         <div className=' w-full justify-center'>
@@ -13,7 +13,7 @@ const AddNode = () => {
                 <div className=' self-center'>
                 <FcMindMap size="30"/></div>
                 <div className='w-full grid justify-items-center'>
-                <h1 className='text-xl text-sky-700 font-bold'>Add Node</h1>
+                <h1 className='text-xl text-sky-700 font-bold'>Edit Node</h1>
                 </div>
               
                 <div className='w-full'>
@@ -55,4 +55,4 @@ const AddNode = () => {
     );
 };
 
-export default AddNode
+export default EditNode

@@ -3,7 +3,7 @@ import { FcMindMap } from 'react-icons/fc';
 
 
 
-const AddNode = () => {
+const DelNode = () => {
     return(
         <form>
         <div className=' w-full justify-center'>
@@ -13,22 +13,13 @@ const AddNode = () => {
                 <div className=' self-center'>
                 <FcMindMap size="30"/></div>
                 <div className='w-full grid justify-items-center'>
-                <h1 className='text-xl text-sky-700 font-bold'>Add Node</h1>
+                <h1 className='text-xl text-sky-700 font-bold'>Delete Node</h1>
                 </div>
               
                 <div className='w-full'>
-                <div className='text-sky-700 font-semibold '>Name</div>
                 <input
-                    className="form-input rounded-md border-none py-3 px-16"    
-                    />
-                <div className='pt-4 text-sky-700 font-semibold'>Detail</div>
-                <input
-                    className="form-input rounded-md border-none py-3 px-16"    
-                    />
-                <div className='pt-4 text-sky-700 font-semibold '>Owner</div>
-                <input
-                    className="form-input rounded-md border-none py-3 px-16"    
-                    />
+                    className="form-input rounded-md border-none py-3 px-36" 
+                    placeholder="delete node PSU005 ?"/>
                 </div>
                 <div className='flex grid-cols-2 gap-6 place-content-end'>
                 <div> 
@@ -55,4 +46,4 @@ const AddNode = () => {
     );
 };
 
-export default AddNode
+export default DelNode
