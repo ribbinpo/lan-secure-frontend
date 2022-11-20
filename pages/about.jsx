@@ -1,8 +1,24 @@
 import Title from "../components/title";
 import TableNode from "../components/tables/tableNode";
 import { AiOutlineAppstoreAdd } from 'react-icons/ai';
+import Image from 'next/image';
+import autoprefixer from "autoprefixer";
 
+// const myLoader = ({ src, width, quality }) => {
+//   return `https://example.com/${src}?w=${width}&q=${quality || 75}`
+// }
 
+// const MyImage = ({ src }) => {
+//   return (
+//     <Image
+//       // loader={myLoader}
+//       src={src}
+//       alt="Picture of the author"
+//       width={500}
+//       height={500}
+//     />
+//   )
+// }
 
 const node = () => {
   return (
@@ -31,18 +47,39 @@ const node = () => {
           <div>imgimgimgimgimgimgimgimgimgimgimgimgimg</div>
         </div>
       </div>
-      <div className="text-xl font-bold mt-16 w-ful grid justify-items-center">
+      <div className="text-xl font-bold mt-16 w-ful grid justify-items-center pt-8">
         <div>Deatil of Graph</div>
         </div>
       <div className="flex justify-between mt-5">
-          <div className="w-full bg-sky-500">img</div>
-          <div className="w-full bg-sky-800">img</div>
+          <div className="w-full">
+            <Image
+              src="/assets/color_host.png"
+              alt="Picture of the author"
+              width="1000"
+              height="350"
+            />
+          </div>
+          <div className="w-full">
+            <Image
+              src="/assets/color_arrow.png"
+              alt="Picture of the author"
+              width="1000"
+              height="350"
+            />
+          </div>
       </div>
       <div className="text-xl font-bold mt-16 w-ful grid justify-items-center">
         <div>Malicious Node </div>
         </div>
-        <div className="flex justify-center mt-5">
-          <div className="w-full bg-sky-500">img</div>
+        <div className="w-full">
+          <div className="flex justify-center pt-8">
+            <Image
+              src="/assets/malicious.png"
+              alt="Picture of the author"
+              width="700"
+              height="350"
+            />
+          </div>
           
       </div>
     </div>

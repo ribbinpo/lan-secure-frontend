@@ -19,7 +19,7 @@ const DelNode = () => {
                 <div className='w-full'>
                 <input
                     className="form-input rounded-md border-none py-3 px-36" 
-                    placeholder="delete node PSU005 ?"/>
+                    placeholder="Delete node PSU005 ?"/>
                 </div>
                 <div className='flex grid-cols-2 gap-6 place-content-end'>
                 <div> 
