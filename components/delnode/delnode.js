@@ -17,21 +17,21 @@ const DelNode = () => {
                 </div>
               
                 <div className='w-full'>
-                <input
-                    className="form-input rounded-md border-none py-3 px-36" 
-                    placeholder="Delete node PSU005 ?"/>
+                <div className="form-input rounded-md border-none py-3 px-36 bg-white text-sky-700">
+                    Delete node PSU005 ?
+                </div>
                 </div>
                 <div className='flex grid-cols-2 gap-6 place-content-end'>
                 <div> 
                     <button className="rounded-xl bg-sky-700">
-                    <div className="text-lg text-white px-4 ">
+                    <div className="text-lg text-white px-6">
                     Yes
                     </div>
                  </button>
                 </div>
                 <div>
                     <button className="rounded-xl bg-sky-700 ">
-                    <div className="text-lg text-white px-4 ">
+                    <div className="text-lg text-white px-6">
                     No
                     </div>
                  </button>
