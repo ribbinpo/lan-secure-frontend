@@ -43,9 +43,17 @@ const node = () => {
                  with desktop publishing software like Aldus PageMaker
                   including versions of Lorem Ipsum.</div>
         </div>
-        <div className="bg-sky-800 w-full">
-          <div>imgimgimgimgimgimgimgimgimgimgimgimgimg</div>
-        </div>
+        <div className="flex justify mt-5">
+          <div className="w-full">
+            <Image
+              src="/assets/design.png"
+              alt="Picture of the author"
+              width="1500"
+              height="1000"
+            />
+          </div>
+          </div>
+        
       </div>
       <div className="text-xl font-bold mt-16 w-ful grid justify-items-center pt-8">
         <div>Deatil of Graph</div>
