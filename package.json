@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.4",
     "@react-icons/all-files": "^4.1.0",
     "flowbite": "^1.5.3",
     "flowbite-react": "^0.1.11",
