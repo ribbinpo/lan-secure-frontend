@@ -2,7 +2,7 @@ import { useEffect, useState, Fragment } from "react";
 import { Transition, Dialog } from "@headlessui/react";
 
 import { CiEdit } from 'react-icons/ci';
-import { CiEraser } from 'react-icons/ci';
+import { BsCloudDownload } from 'react-icons/bs';
 
 const example = [
   { id: 1, node: 'PSU005', datetime: '01112022', connectionGraph: '01112022.png', url: '1' },
@@ -52,7 +52,7 @@ const NodeTable = () => {
                   </td>
                   <td className="py-3 px-7">
                     {/* Link value.url */}
-                    <a href="#"><CiEdit size={20}/></a>
+                    <a href="#"><BsCloudDownload size={20}/></a>
                   </td>
                 </tr>
               );

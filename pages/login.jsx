@@ -22,7 +22,7 @@ const Login = () => {
               
               </div>
               <h1 className='text-2xl font-medium text-primary text-center mb-5'>
-                    LAN-SECURE 
+                    LAN-SECURE Monitoring
                 </h1>
                 <h1 className='text-2xl font-medium text-primary mt-4 mb-12 text-center'>
                     Log in to your account 
@@ -30,7 +30,7 @@ const Login = () => {
 
                 <form onSubmit={handleFormSubmit}>
                     <div>
-                        <label htmlFor='email'>Username</label>
+                        <label htmlFor='email'>Email</label>
                         <input
                             type='email'
                             className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4`}
