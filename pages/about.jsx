@@ -3,11 +3,13 @@ import TableNode from "../components/tables/tableNode";
 import { AiOutlineAppstoreAdd } from 'react-icons/ai';
 import Image from 'next/image';
 import autoprefixer from "autoprefixer";
+import Navbar from '../components/layouts/navbar'
 
 const node = () => {
   return (
     
-    <div className="px-16">
+    <div>
+      <div className="px-16">
       <div className="flex justify-between mt-16">
         <div>
           <div className="text-2xl font-bold">LAN-Security 
@@ -63,7 +65,7 @@ const node = () => {
       <div className="text-xl font-bold mt-16 w-ful grid justify-items-center">
         <div>Malicious Node </div>
         </div>
-        <div className="w-full">
+        <div className="w-full pb-36">
           <div className="flex justify-center pt-8">
             <Image
               src="/assets/malicious.png"
@@ -72,8 +74,14 @@ const node = () => {
               height="350"
             />
           </div>
-          
-      </div>
+        </div>
+        </div>
+        <>
+     
+      <div className="p-10 bg-sky-700" />
+      
+      <main></main>
+    </>
     </div>
   );
 };
