@@ -15,7 +15,7 @@ const carousel = ({ images, width, height }) => {
               width={width}
               height={height}
             />
-            <p className="legend">{items.text}</p>
+            {/* <p className="legend">{items.text}</p> */}
           </div>
         );
       })}

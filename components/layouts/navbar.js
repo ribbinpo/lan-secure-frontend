@@ -13,7 +13,7 @@ const navbar = () => {
           <div className="pr-2"><FcMindMap size="30"/></div>
           </div>
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          LAN-SECURE 
+          LAN-SECURE MONITORING
         </span>
       </Navbar.Brand>
       
