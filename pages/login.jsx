@@ -2,8 +2,10 @@
 import React, { useState } from 'react';
 import { FcMindMap } from 'react-icons/fc';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 const Login = () => {
+    const router = useRouter()
     const handleFormSubmit = (e) => {
         e.preventDefault();
 
@@ -17,7 +19,7 @@ const Login = () => {
             .then((response) => {
                 const status = response?.data?.status;
                 if (status === 'success') {
-                    navigate('/about');
+                    router.push('/about')
                 }
             }).catch((err) => {
                 console.log(err);
