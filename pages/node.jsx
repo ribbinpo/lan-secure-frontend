@@ -3,7 +3,7 @@ import TableNode from "../components/tables/tableNode";
 import AddNode from "../components/addnode/addnode";
 import { AiOutlineAppstoreAdd } from 'react-icons/ai';
 import { Dialog, Transition } from '@headlessui/react'
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 
 
 
