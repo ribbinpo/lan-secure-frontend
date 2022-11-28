@@ -5,7 +5,7 @@ import Image from 'next/image';
 import autoprefixer from "autoprefixer";
 import Navbar from '../components/layouts/navbar'
 
-const node = () => {
+const about = () => {
   return (
 
     <div>
@@ -132,4 +132,4 @@ const node = () => {
   );
 };
 
-export default node;
+export default about;
