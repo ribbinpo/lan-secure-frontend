@@ -1,7 +1,5 @@
 import { useEffect, useState, Fragment } from "react";
 import { Transition, Dialog } from "@headlessui/react";
-
-import { CiEdit } from 'react-icons/ci';
 import { BsCloudDownload } from 'react-icons/bs';
 
 const example = [
@@ -9,9 +7,19 @@ const example = [
   { id: 2, node: 'PSU035', datetime: '02112022', connectionGraph: '02112022.png', url: '2' }
 ];
 
-const NodeTable = () => {
+const NodeTable = ({ config, nodeId }) => {
   const [data, setData] = useState([]);
   useEffect(() => {
+    let url = '';
+    switch (config) {
+      case 'image':
+        console.log('image');
+      case 'dot':
+        console.log('dot');
+      case 'pcap':
+        console.log('pcap');
+    }
+    // axios.get => set name, fetch by id node
     setData(example);
   }, []);
   return (
@@ -48,7 +56,11 @@ const NodeTable = () => {
                     {value.datetime}
                   </td>
                   <td className="py-4 px-6">
-                    {value.connectionGraph}
+                    {(config === 'image') ? (
+                      <>Image: {value.connectionGraph}</>
+                    ):(
+                      <>{value.connectionGraph}</>
+                    )}
                   </td>
                   <td className="py-3 px-7">
                     {/* Link value.url */}

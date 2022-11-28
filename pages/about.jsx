@@ -25,7 +25,8 @@ const node = () => {
               because it contains the IP addresses of both source and destination. 
               Then we will have the raspberry pi send the pcap file to the server including the code for graphing. 
               So that graphing takes place automatically every day We can see all connection graphs on this website. 
-              And take this information to analyze to find a way to prevent further in the future.</div>
+              And take this information to analyze to find a way to prevent further in the future.
+            </div>
           </div>
           <div className="flex justify mr-20">
           </div>

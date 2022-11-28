@@ -3,7 +3,7 @@ import { Carousel } from 'react-responsive-carousel';
 import Image from 'next/image';
 
 // src, alt, text
-const carousel = ({ images, width, height }) => {
+const carousel = ({ images, width, height, text }) => {
   return (
     <Carousel autoPlay showArrows={true}>
       {images.map((items, key) => {
@@ -15,7 +15,7 @@ const carousel = ({ images, width, height }) => {
               width={width}
               height={height}
             />
-            {/* <p className="legend">{items.text}</p> */}
+            {(text) && <p className="legend">{items.text}</p>}
           </div>
         );
       })}
