@@ -5,7 +5,7 @@ import Image from 'next/image';
 // src, alt, text
 const carousel = ({ images, width, height, text }) => {
   return (
-    <Carousel autoPlay showArrows={true}>
+    <Carousel autoPlay showArrows={true} showThumbs={false}>
       {images.map((items, key) => {
         return (
           <div key={key}>
