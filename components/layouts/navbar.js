@@ -29,8 +29,8 @@ const navbar = () => {
         <Navbar.Link href="/node">
           Node
         </Navbar.Link>
-        <Navbar.Link href="/record">
-          Record
+        <Navbar.Link href="/login">
+          Logout
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>

@@ -1,6 +1,8 @@
 import { useEffect, useState, Fragment } from "react";
 import { Transition, Dialog } from "@headlessui/react";
 import { BsCloudDownload } from 'react-icons/bs';
+import axios from "axios";
+import Image from 'next/image';
 
 const example = [
   { id: 1, node: 'PSU005', datetime: '01112022', connectionGraph: '01112022.png', url: '1' },
@@ -9,19 +11,40 @@ const example = [
 
 const NodeTable = ({ config, nodeId }) => {
   const [data, setData] = useState([]);
+  const [dataDetail, setDataDetails] = useState({});
   useEffect(() => {
-    let url = '';
-    switch (config) {
-      case 'image':
-        console.log('image');
-      case 'dot':
-        console.log('dot');
-      case 'pcap':
-        console.log('pcap');
-    }
+    // let url = '';
+    const fetch = async () => {
+      try {
+        // const res = await axios.get('http://localhost:8000/node/getAll');
+        const res = await axios.get('http://137.184.74.103/node/getAll');
+        const nodeList = res.data.filter((item) => item.idnode === nodeId)[0];
+        console.log(nodeList);
+        setDataDetails(nodeList);
+        switch (config) {
+          case 'image':
+            setData(nodeList.images);
+            console.log('image');
+            break;
+          case 'dot':
+            setData(nodeList.dots);
+            console.log('dot');
+            break;
+          case 'pcap':
+            setData(nodeList.pcaps);
+            console.log('pcap');
+            break;
+        }
+      } catch (err) {
+        console.log(err);
+        throw err;
+      }
+    };
+    fetch();
     // axios.get => set name, fetch by id node
     setData(example);
-  }, []);
+  }, [nodeId, config]);
+  
   return (
     <>
       <div className="font-bold">
@@ -46,25 +69,51 @@ const NodeTable = ({ config, nodeId }) => {
             </tr>
           </thead>
           <tbody>
-            {data?.map((value, index) => {
+            {data.map((value, key) => {
               return (
-                <tr key={index} className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                <tr key={key} className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                   <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    {value.node}
+                    {dataDetail.name}
                   </th>
                   <td className="py-4 px-6">
-                    {value.datetime}
+                    {value.toString().substring(7,15)}
                   </td>
                   <td className="py-4 px-6">
-                    {(config === 'image') ? (
-                      <>Image: {value.connectionGraph}</>
-                    ):(
-                      <>{value.connectionGraph}</>
-                    )}
+                    {config === 'image' ? (
+                      <Image
+                        src={`http://137.184.74.103/assets/images/${dataDetail.name}/${value.toString()}`}
+                        alt="Picture of the author"
+                        width="100"
+                        height="100"
+                      />
+                    )
+                    : <div>{value.toString()}</div>}
                   </td>
                   <td className="py-3 px-7">
                     {/* Link value.url */}
-                    <a href="#"><BsCloudDownload size={20}/></a>
+                      {config === 'image' ? (
+                      <button>
+                          <a href={`http://137.184.74.103/connected-graph/v1/download/images/${dataDetail.name}/${value.toString()}`}>
+                          <BsCloudDownload size={20}/>
+                        </a>
+                      </button>
+                      )
+                      : config === 'pcap' ? (
+                      <button>
+                          <a href={`http://137.184.74.103/connected-graph/v1/download/pcaps/${dataDetail.name}/${value.toString()}`}>
+                          <BsCloudDownload size={20}/>
+                        </a>
+                      </button>
+                      )
+                      : config === 'dot' ? (
+                        <button>
+                            <a href={`http://137.184.74.103/connected-graph/v1/download/dots/${dataDetail.name}/${value.toString()}`}>
+                            <BsCloudDownload size={20}/>
+                          </a>
+                        </button>
+                      )
+                      : <div />
+                    }
                   </td>
                 </tr>
               );
