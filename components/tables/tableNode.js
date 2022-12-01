@@ -17,7 +17,7 @@ const TableNode = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [curentEditNode , setCurentEditNode] = useState({});
   const [currentDelNode, setCurentDelNode] = useState({});
-
+  const [isOpenEdit, setIsOpenEdit] = useState(false)
 
     function closeModal() {
         setIsOpen(false)
@@ -25,7 +25,10 @@ const TableNode = () => {
 
     function openModal(currentNode) {
         setCurentEditNode(currentNode)
-        setIsOpen(true)
+        setIsOpenEdit(true)
+    }
+    function closeModalEdit() {
+        setIsOpenEdit(false)
     }
 
     const [isOpendel, setIsOpenDel] = useState(false)
@@ -75,8 +78,8 @@ const TableNode = () => {
                     </th>
                 </tr>
             </thead>
-            <Transition appear show={isOpen} as={Fragment}>
-                <Dialog as="div" className="relative z-10" onClose={closeModal}>
+            <Transition appear show={isOpenEdit} as={Fragment}>
+                <Dialog as="div" className="relative z-10" onClose={closeModalEdit}>
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-300"
@@ -100,7 +103,7 @@ const TableNode = () => {
                 leaveTo="opacity-0 scale-95"
                 >
                     <Dialog.Panel>
-                    <div><EditNode currentNode={curentEditNode}/></div>
+                    <div><EditNode onClose={closeModalEdit} currentNode={curentEditNode}/></div>
                     </Dialog.Panel>
                     </Transition.Child>
                     </div>
@@ -133,7 +136,7 @@ const TableNode = () => {
                 leaveTo="opacity-0 scale-95"
                 >
                     <Dialog.Panel>
-                    <div><DelNode currentNode={currentDelNode}/></div>
+                    <div><DelNode currentNode={currentDelNode} onClose={closeModalDel} /></div>
                     </Dialog.Panel>
                     </Transition.Child>
                     </div>

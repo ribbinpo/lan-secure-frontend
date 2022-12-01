@@ -47,7 +47,7 @@ const node = () => {
           leaveTo="opacity-0 scale-95"
           >
               <Dialog.Panel>
-              <div><AddNode/></div>
+              <div><AddNode onClose={closeModal} /></div>
               </Dialog.Panel>
               </Transition.Child>
               </div>

@@ -3,7 +3,7 @@ import { FcMindMap } from 'react-icons/fc';
 import axios from 'axios';
 
 
-const EditNode  = ({currentNode}) => {
+const EditNode  = ({currentNode, onClose}) => {
     const [name, setName] = useState(currentNode.name);
     const [detail, setDatail] = useState(currentNode.detail);
     const [owner, setOwner] = useState(currentNode.owner);
@@ -28,6 +28,7 @@ const EditNode  = ({currentNode}) => {
     .then(res => {
         console.log(res);
     })
+    onClose();
 }
     return(
         <form  onSubmit={onSubmit}>

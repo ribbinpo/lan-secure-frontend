@@ -3,7 +3,7 @@ import { FcMindMap } from 'react-icons/fc';
 import axios from 'axios';
 
 
-const AddNode = () => {
+const AddNode = ({ onClose }) => {
 
     const [name, setName] = useState('');
     const [detail, setDatail] = useState('');
@@ -26,6 +26,7 @@ const AddNode = () => {
     .then(res => {
         console.log(res);
     })
+    onClose();
     }
     return(
         <form onSubmit={onSubmit}>
@@ -60,7 +61,7 @@ const AddNode = () => {
                  </button>
                 </div>
                 <div>
-                    <button className="rounded-xl bg-sky-700 ">
+                    <button type="button" onClick={onClose} className="rounded-xl bg-sky-700 ">
                     <div className="text-lg text-white px-4 ">
                     Cancel
                     </div>
