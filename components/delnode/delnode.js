@@ -1,11 +1,20 @@
 import React ,{ useEffect, useState } from 'react';
 import { FcMindMap } from 'react-icons/fc';
+import axios from 'axios';
 
 
+const DelNode = ({currentNode}) => {
+    
+    const id = (currentNode.idnode)
+    console.log(id);
 
-const DelNode = () => {
+    axios.delete(`http://137.184.74.103/node/${id}`)
+        .then(res => {
+            console.log(res);
+        })
+
     return(
-        <form>
+        <form >
         <div className=' w-full justify-center'>
         <div className="flex justify-center items-center min-h-screen">
             <div className="flex flex-col gap-y-5 py-5 rounded-md px-10 bg-sky-100">

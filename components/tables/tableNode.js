@@ -4,22 +4,27 @@ import { Dialog, Transition } from '@headlessui/react'
 import React, { Fragment, useEffect, useState } from 'react'
 import EditNode from '../editnode/editnode';
 import DelNode from '../delnode/delnode';
+import axios from 'axios';
 
-const example = [
-    { id: 1, name: 'PSU005', detail: '1/22 Vichit Mueang Phuket The Base condo', owner: 'Nattapong Bunchokying' },
-    { id: 2, name: 'PSU035', detail: '78/83 Vichit Mueang Phuket', owner: 'Teerawut Saesim' }
-];
+// const example = [
+//     { id: 1, name: 'PSU005', detail: '1/22 Vichit Mueang Phuket The Base condo', owner: 'Nattapong Bunchokying' },
+//     { id: 2, name: 'PSU035', detail: '78/83 Vichit Mueang Phuket', owner: 'Teerawut Saesim' }
+// ];
 
 const TableNode = () => {
   const [data, setData] = useState([]);
 
   const [isOpen, setIsOpen] = useState(false)
+  const [curentEditNode , setCurentEditNode] = useState({});
+  const [currentDelNode, setCurentDelNode] = useState({});
+
 
     function closeModal() {
         setIsOpen(false)
     }
 
-    function openModal() {
+    function openModal(currentNode) {
+        setCurentEditNode(currentNode)
         setIsOpen(true)
     }
 
@@ -29,14 +34,27 @@ const TableNode = () => {
         setIsOpenDel(false)
     }
 
-    function openModalDel() {
+    function openModalDel(currentNode) {
+        setCurentDelNode(currentNode)
         setIsOpenDel(true)
     }
 
   
+//   useEffect(() => {
+//     setData(example);
+//   }, []);
+
   useEffect(() => {
-    setData(example);
-  }, []);
+    const getData = async () => {
+        await axios.get("http://137.184.74.103/node/getAll", {
+        }).then(res => {
+            setData(res.data)
+
+        })
+    }
+    getData()
+}, [])
+
   return (
    
     <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
@@ -82,7 +100,7 @@ const TableNode = () => {
                 leaveTo="opacity-0 scale-95"
                 >
                     <Dialog.Panel>
-                    <div><EditNode/></div>
+                    <div><EditNode currentNode={curentEditNode}/></div>
                     </Dialog.Panel>
                     </Transition.Child>
                     </div>
@@ -115,7 +133,7 @@ const TableNode = () => {
                 leaveTo="opacity-0 scale-95"
                 >
                     <Dialog.Panel>
-                    <div><DelNode/></div>
+                    <div><DelNode currentNode={currentDelNode}/></div>
                     </Dialog.Panel>
                     </Transition.Child>
                     </div>
@@ -139,8 +157,8 @@ const TableNode = () => {
                             </td>
                             <td className="py-3 px-7">
                                 <div className="flex">
-                                    <a href="#" className="" onClick={openModal}><CiEdit size={20}/></a>
-                                    <a href="#" className="pl-2" onClick={openModalDel}><CiEraser size={20}/></a>
+                                    <a href="#" className="" onClick={() => openModal(value)}><CiEdit size={20}/></a>
+                                    <a href="#" className="pl-2" onClick={() => openModalDel(value)}><CiEraser size={20}/></a>
                                 </div>
                             </td>
                         </tr>
