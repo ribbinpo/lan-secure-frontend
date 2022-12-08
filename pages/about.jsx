@@ -36,8 +36,8 @@ const about = () => {
               <Image
                 src="/assets/design.png"
                 alt="Picture of the author"
-                width="2200"
-                height="1500"
+                width="2800"
+                height="2000"
               />
             </div>
           </div>
