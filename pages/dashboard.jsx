@@ -15,8 +15,8 @@ export default function Home() {
     // fetch to got lastest images in each nodes
     const fetch = async () => {
       try {
-        // const res = await axios.get('http://localhost:8000/node/getAll');
-        const res = await axios.get('http://137.184.74.103/node/getAll');
+        // const res = await axios.get('http://127.0.0.1:8000:8000/node/getAll');
+        const res = await axios.get('http://127.0.0.1:8000/node/getAll');
         console.log(res.data);
         setNodeId(res.data[0].idnode);
         setNodes(res.data);

@@ -49,7 +49,7 @@ const TableNode = () => {
 
   useEffect(() => {
     const getData = async () => {
-        await axios.get("http://137.184.74.103/node/getAll", {
+        await axios.get("http://127.0.0.1:8000/node/getAll", {
         }).then(res => {
             setData(res.data)
 

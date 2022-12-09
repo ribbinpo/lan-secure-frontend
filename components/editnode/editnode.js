@@ -24,7 +24,7 @@ const EditNode  = ({currentNode, onClose}) => {
         console.log(editnode);
 
 
-    axios.patch(`http://137.184.74.103/node/update/${id}`,editnode)
+    axios.patch(`http://127.0.0.1:8000/node/update/${id}`,editnode)
     .then(res => {
         console.log(res);
     })

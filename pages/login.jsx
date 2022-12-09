@@ -15,7 +15,7 @@ const Login = () => {
         const user = { email: email, password: password }
         console.log(user)
 
-        axios.post("http://137.184.74.103/auth/signin", user)
+        axios.post("http://127.0.0.1:8000/auth/signin", user)
             .then((response) => {
                 const status = response?.data?.status;
                 if (status === 'success') {

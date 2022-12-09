@@ -9,7 +9,7 @@ const DelNode = ({currentNode, onClose }) => {
     console.log(id);
 
     const onDel = () => {
-        axios.delete(`http://137.184.74.103/node/${id}`)
+        axios.delete(`http://127.0.0.1:8000/node/${id}`)
         .then(res => {
             console.log(res);
         });

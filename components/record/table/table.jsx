@@ -16,8 +16,8 @@ const NodeTable = ({ config, nodeId }) => {
     // let url = '';
     const fetch = async () => {
       try {
-        // const res = await axios.get('http://localhost:8000/node/getAll');
-        const res = await axios.get('http://137.184.74.103/node/getAll');
+        // const res = await axios.get('http://127.0.0.1:8000:8000/node/getAll');
+        const res = await axios.get('http://127.0.0.1:8000/node/getAll');
         const nodeList = res.data.filter((item) => item.idnode === nodeId)[0];
         console.log(nodeList);
         setDataDetails(nodeList);
@@ -81,7 +81,7 @@ const NodeTable = ({ config, nodeId }) => {
                   <td className="py-4 px-6">
                     {config === 'image' ? (
                       <Image
-                        src={`http://137.184.74.103/assets/images/${dataDetail.name}/${value.toString()}`}
+                        src={`http://127.0.0.1:8000/assets/images/${dataDetail.name}/${value.toString()}`}
                         alt="Picture of the author"
                         width="100"
                         height="100"
@@ -93,21 +93,21 @@ const NodeTable = ({ config, nodeId }) => {
                     {/* Link value.url */}
                       {config === 'image' ? (
                       <button>
-                          <a href={`http://137.184.74.103/connected-graph/v1/download/images/${dataDetail.name}/${value.toString()}`}>
+                          <a href={`http://127.0.0.1:8000/connected-graph/v1/download/images/${dataDetail.name}/${value.toString()}`}>
                           <BsCloudDownload size={20}/>
                         </a>
                       </button>
                       )
                       : config === 'pcap' ? (
                       <button>
-                          <a href={`http://137.184.74.103/connected-graph/v1/download/pcaps/${dataDetail.name}/${value.toString()}`}>
+                          <a href={`http://127.0.0.1:8000/connected-graph/v1/download/pcaps/${dataDetail.name}/${value.toString()}`}>
                           <BsCloudDownload size={20}/>
                         </a>
                       </button>
                       )
                       : config === 'dot' ? (
                         <button>
-                            <a href={`http://137.184.74.103/connected-graph/v1/download/dots/${dataDetail.name}/${value.toString()}`}>
+                            <a href={`http://127.0.0.1:8000/connected-graph/v1/download/dots/${dataDetail.name}/${value.toString()}`}>
                             <BsCloudDownload size={20}/>
                           </a>
                         </button>

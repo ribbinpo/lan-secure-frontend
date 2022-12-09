@@ -22,7 +22,7 @@ const AddNode = ({ onClose }) => {
         }
         console.log(addnode);
 
-        axios.post("http://137.184.74.103/node/create",addnode)
+        axios.post("http://127.0.0.1:8000/node/create",addnode)
     .then(res => {
         console.log(res);
     })
