@@ -8,7 +8,7 @@ const navbar = () => {
     rounded={true}
     className="shadow-md"
     >
-      <Navbar.Brand href="/">
+      <Navbar.Brand href="/dashboard">
         <div className="ml-2">
           <div className="pr-2"><FcMindMap size="30"/></div>
           </div>
@@ -20,7 +20,7 @@ const navbar = () => {
       <Navbar.Toggle />
       <Navbar.Collapse>
         <Navbar.Link
-          href="/">
+          href="/dashboard">
           Dashboard
         </Navbar.Link>
         <Navbar.Link href="/about">
@@ -29,8 +29,8 @@ const navbar = () => {
         <Navbar.Link href="/node">
           Node
         </Navbar.Link>
-        <Navbar.Link href="/record">
-          Record
+        <Navbar.Link href="/login">
+          Logout
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>

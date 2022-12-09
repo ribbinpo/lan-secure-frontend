@@ -1,11 +1,23 @@
 import React ,{ useEffect, useState } from 'react';
 import { FcMindMap } from 'react-icons/fc';
+import axios from 'axios';
 
 
+const DelNode = ({currentNode, onClose }) => {
+    
+    const id = (currentNode.idnode)
+    console.log(id);
 
-const DelNode = () => {
+    const onDel = () => {
+        axios.delete(`http://137.184.74.103/node/${id}`)
+        .then(res => {
+            console.log(res);
+        });
+        onClose();
+    };
+
     return(
-        <form>
+        <form >
         <div className=' w-full justify-center'>
         <div className="flex justify-center items-center min-h-screen">
             <div className="flex flex-col gap-y-5 py-5 rounded-md px-10 bg-sky-100">
@@ -18,19 +30,19 @@ const DelNode = () => {
               
                 <div className='w-full'>
                 <div className="form-input rounded-md border-none py-3 px-36 bg-white text-sky-700">
-                    Delete node PSU005 ?
+                    Delete node {currentNode.name}
                 </div>
                 </div>
                 <div className='flex grid-cols-2 gap-6 place-content-end'>
                 <div> 
-                    <button className="rounded-xl bg-sky-700">
+                    <button className="rounded-xl bg-sky-700" onClick={onDel}>
                     <div className="text-lg text-white px-6">
                     Yes
                     </div>
                  </button>
                 </div>
                 <div>
-                    <button className="rounded-xl bg-sky-700 ">
+                    <button className="rounded-xl bg-sky-700 " onClick={onClose}>
                     <div className="text-lg text-white px-6">
                     No
                     </div>

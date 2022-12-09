@@ -19,7 +19,7 @@ const Login = () => {
             .then((response) => {
                 const status = response?.data?.status;
                 if (status === 'success') {
-                    router.push('/about')
+                    router.push('/dashboard')
                 }
             }).catch((err) => {
                 console.log(err);
